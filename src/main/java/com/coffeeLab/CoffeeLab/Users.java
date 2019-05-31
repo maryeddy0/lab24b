@@ -18,7 +18,6 @@ public class Users {
 	private String phone;
 	
 	
-	
 	public Users() {
 		super();
 		// TODO Auto-generated constructor stub

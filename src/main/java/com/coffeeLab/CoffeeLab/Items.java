@@ -5,7 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.stereotype.Controller;
+
 @Entity
+@Controller
 public class Items {
 	
 	@Id // over the primary key regardless of type
@@ -16,14 +19,11 @@ public class Items {
 	private Integer quantity;
 	private Double price;
 	
-	 
-	
+
 	public Items() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-
 
 	public Items(Integer id, String name, String description, Integer quantity, Double price) {
 		super();

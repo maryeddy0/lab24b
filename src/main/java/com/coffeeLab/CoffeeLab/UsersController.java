@@ -15,17 +15,19 @@ public class UsersController {
 
 	@RequestMapping("/register")
 	public ModelAndView newUser() {
-		return new ModelAndView("registration");
+
+		System.out.println(u.findAll().size());
+		return new ModelAndView("registration", "userInfo", u.findAll());
 	}
 
 	@RequestMapping("/user-display")
 	public ModelAndView displayHome() {
-		return new ModelAndView("redirect:registration", "userInfo", u.findAll());
+		return new ModelAndView("registration", "userInfo", u.findAll());
 	}
 
 	@RequestMapping("add-person")
 	public ModelAndView addNewPerson(@RequestParam("name") String name, @RequestParam("email") String email, @RequestParam("phone") String phone) {
 		u.save(new Users(name, email, phone));
-		return new ModelAndView("redirect:registration");
+		return new ModelAndView("registration", "userInfo", u.findAll());
 	}
 }
